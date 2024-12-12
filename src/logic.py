@@ -33,21 +33,21 @@ def current_page_index(cidx=None):
         return 0
 
 
-def move_index(index: int, mode='f'):
+def move_index(current: int, mode='f'):
     """
     Adjusts the index by incrementing ('f') or decrementing ('b') within set limits.
 
     Parameters:
-        index (int): The current index.
+        current (int): The current index.
         mode (str): 'f' for forward, 'b' for backward (default is 'f').
 
     Returns:
         int: The updated index within the range [MIN_INDEX, MAX_INDEX].
     """
     if mode == 'f':
-        return index + 1 if index < MAX_INDEX else MAX_INDEX
+        return current + 1 if current < MAX_INDEX else MAX_INDEX
     if mode == 'b':
-        return index - 1 if index > MIN_INDEX else MIN_INDEX
+        return current - 1 if current > MIN_INDEX else MIN_INDEX
     
 
 def quran_pages():

@@ -43,16 +43,16 @@ class Window:
         self.surah_combobox.bind("<<ComboboxSelected>>", self.on_surah_select)
 
     def create_next_button(self):
-        button = Button(self.root, text='<', command=self.next_page)
+        button = Button(self.root, text='<', command=self.next)
         button.place(relx=0.1, rely=0.45, anchor='center')
         return button
 
     def create_back_button(self):
-        button = Button(self.root, text='>', command=self.back_page)
+        button = Button(self.root, text='>', command=self.back)
         button.place(relx=0.9, rely=0.45, anchor='center')
         return button
 
-    def next_page(self):
+    def next(self):
         """
         Navigates to the next page of the Quran if it is not the last page.
         Updates the displayed page image accordingly.
@@ -60,7 +60,7 @@ class Window:
         self.cidx = move_index(self.cidx)
         self.page_lable.config(image=self.pages[self.cidx])
 
-    def back_page(self):
+    def back(self):
         """
         Navigates to the previous page of the Quran if it is not the first page.
         Updates the displayed page image accordingly.
